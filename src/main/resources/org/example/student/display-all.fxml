@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane prefHeight="407.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.ArticleController">
+    <right>
+        <VBox prefHeight="364.0" prefWidth="102.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="102.0" text="Add" />
+                <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="102.0" text="Delete" />
+                <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="102.0" text="ShowAll" />
+                <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="102.0" text="Save" />
+            </children>
+        </VBox>
+    </right>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <left>
+        <TreeView prefHeight="380.0" prefWidth="128.0" BorderPane.alignment="CENTER" />
+    </left>
+    <center>
+        <TableView fx:id="tableView" prefHeight="280.0" prefWidth="384.0">
+            <columns>
+                <TableColumn fx:id="txtId" prefWidth="50.0" text="Id" >
+                    <cellValueFactory><PropertyValueFactory property="id" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="txtTitleView" prefWidth="122.0" text="Title" >
+                    <cellValueFactory><PropertyValueFactory property="title" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="txtDescriptionView" prefWidth="97.0" text="Description" >
+                    <cellValueFactory><PropertyValueFactory property="des" /></cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="txtContentView" prefWidth="119.0" text="Content">
+                    <cellValueFactory><PropertyValueFactory property="content" /></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField promptText="Find Article by Url" />
+                <Button mnemonicParsing="false" text="Submit" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
